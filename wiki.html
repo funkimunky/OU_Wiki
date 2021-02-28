@@ -153,7 +153,7 @@
     the full distance <em>S</em>&nbsp;to
     slow down and stop.</p>
 
-<p>$$v^2\ =\ u^2\ +\ 2aS$$</p>
+<p style="text-align: center;">$$v^2\ =\ u^2\ +\ 2aS$$</p>
 
 <p>and have S as the distance the lines begin from the junction,</p>
 
@@ -161,11 +161,11 @@
 
 <p>assume final speed is zero</p>
 
-<p>$$0\ =\ u^2\ +\ 2aS$$</p>
+<p style="text-align: center;">$$0\ =\ u^2\ +\ 2aS$$</p>
 
 <p>or</p>
 
-<p>$$-2aS\ =\ u^2$$</p>
+<p style="text-align: center;">$$-2aS\ =\ u^2$$</p>
 
 <p>If we take the <span style="background-color: lime;" >slowest value of deceleration as about -0.9 ms<sup>-2</sup> (NEEDS REFERENCE)</span>,
     it means we get a different value of when the lines begin that depends on the speed limit of the road (assuming
@@ -174,9 +174,9 @@
 
 <p>If it was a 60 mph limit dual carriageway (27 ms<sup>-1</sup>), it means the lines would begin at:</p>
 
-<p>$$S\ =\ -\ (27)2\ /\ 2\ \times\ 0.9$$</p>
+<p style="text-align: center;">$$S\ =\ -\ (27)2\ /\ 2\ \times\ 0.9$$</p>
 
-<p>$$S\ =\ 405\ metres\ from\ the\ junction.$$</p>
+<p style="text-align: center;">$$S\ =\ 405\ metres\ from\ the\ junction.$$</p>
 
 <p>The next part of the model aims to determine how much the gaps between the yellow lines should reduce by as they get
     nearer to the junction. For this we use an arithmetic sequence. We assume that the gaps between
@@ -186,17 +186,17 @@
 <p>Let $$d_0$$ be the initial distance between the first two lines and let $$d_f$$ be the distance between the
     final two lines right at the junction, then we can write:</p>
 
-<p>$$d_0\ -\ n\ dx\ =\ d_f$$ 'n' is the number of lines after the initial line, n=1 for the first spacing).
+<p style="text-align: center;">$$d_0\ -\ n\ dx\ =\ d_f$$ 'n' is the number of lines after the initial line, n=1 for the first spacing).
     So:</p>
 
-<p>$$n\ dx\ =\ d_0\ -\ d_f$$</p>
+<p style="text-align: center;">$$n\ dx\ =\ d_0\ -\ d_f$$</p>
 
 <p>If we want to have 10 metres between the first two lines and 1 metre between the final two lines,
     this would give:</p>
 
-<p>$$n\ dx\ =\ 10\ -\ 1$$</p>
+<p style="text-align: center;">$$n\ dx\ =\ 10\ -\ 1$$</p>
 
-<p>$$n\ dx\ =\ 9$$</p>
+<p style="text-align: center;">$$n\ dx\ =\ 9$$</p>
 
 <p>We can then define how much we want to reduce the spacing by, which will progressively increase as n increases, and
     this tells us how many lines we'd need. So if we wanted to progressively reduce the distance by 0.25 metres, we'd
@@ -223,41 +223,41 @@
 
 <p>Given the above relationship, we can determine the number of lines.</p>
 
-<p>$$\frac{d_0+d_f}{2}\ \times\ n\ =\ -\frac{u^2}{2a}$$</p>
+<p style="text-align: center;">$$\frac{d_0+d_f}{2}\ \times\ n\ =\ -\frac{u^2}{2a}$$</p>
 
 <p>Therefore, number of lines:</p>
 
-<p>$$n\ =\ -\frac{u^2}{a(d_0\ +\ d_f)}$$</p>
+<p style="text-align: center;">$$n\ =\ -\frac{u^2}{a(d_0\ +\ d_f)}$$</p>
 
 <p>Where $$u\ =\ speed\ of\ vehicle\ when\ it\ reaches\ the\ lines$$</p>
 
-<p>$$a\ =\ acceleration\ (deceleration)$$</p>
+<p style="text-align: center;">$$a\ =\ acceleration\ (deceleration)$$</p>
 
-<p>$$d_0\ =\ initial\ line\ spacing,\ and$$</p>
+<p style="text-align: center;">$$d_0\ =\ initial\ line\ spacing,\ and$$</p>
 
-<p>$$d_f\ =\ final\ line\ spacing,\ as\ above.$$</p>
+<p style="text-align: center;">$$d_f\ =\ final\ line\ spacing,\ as\ above.$$</p>
 
 <p>We can then substitute n into the equation linking the line spacings $$d_f = d_0 - ndx $$</p>
 
 <p>This gives us:</p>
 
-<p>$$d_f = d_0 + \frac{u^2 dx}{a(d_0+d_f)} $$</p>
+<p style="text-align: center;">$$d_f = d_0 + \frac{u^2 dx}{a(d_0+d_f)} $$</p>
 
-<p>$$d_f = \frac{d_0\ a\ (d_0\ +\ d_f)\ +\ u^2\ dx}{a(d_0\ +\ d_f)}$$</p>
+<p style="text-align: center;">$$d_f = \frac{d_0\ a\ (d_0\ +\ d_f)\ +\ u^2\ dx}{a(d_0\ +\ d_f)}$$</p>
 
 <p>Expanding:</p>
 
-<p>$$a\ d_f(d_0\ +\ d_f)\ =\ a\ d_0(d_0\ +\ d_f)\ +\ u^2\ dx$$</p>
+<p style="text-align: center;">$$a\ d_f(d_0\ +\ d_f)\ =\ a\ d_0(d_0\ +\ d_f)\ +\ u^2\ dx$$</p>
 
-<p>$$a\ d_f\ d_0\ +\ a\ d_f^2\ =\ a\ d_0^2\ +\ a\ d_0\ d_f\ +\ u^2\ dx$$</p>
+<p style="text-align: center;">$$a\ d_f\ d_0\ +\ a\ d_f^2\ =\ a\ d_0^2\ +\ a\ d_0\ d_f\ +\ u^2\ dx$$</p>
 
-<p>$$a\ d_0^2\ -\ a\ d_f^2\ =\ -u^2\ dx$$</p>
+<p style="text-align: center;">$$a\ d_0^2\ -\ a\ d_f^2\ =\ -u^2\ dx$$</p>
 
-<p>$$a(d_0^2\ +\ d_f^2)\ =\ -u^2\ dx$$</p>
+<p style="text-align: center;">$$a(d_0^2\ +\ d_f^2)\ =\ -u^2\ dx$$</p>
 
 <p>So, distance between the lines, $$dx$$ is:</p>
 
-<p>$$dx\ =\ -\frac{a(d_0^2\ +\ d_f^2)}{u^2}$$</p>
+<p style="text-align: center;">$$dx\ =\ -\frac{a(d_0^2\ +\ d_f^2)}{u^2}$$</p>
 
 <p>This relates the distance between the lines to the initial speed of the vehicle and it's rate of deceleration,
     together with the initial and final line spacings.</p>
@@ -276,13 +276,13 @@
 
 <p>Applying the method of dimensional analysis to the model gives:</p>
 
-<p>$$d_x\ =\ \frac{a(d_0^2\ -\ d_f^2)}{u^2}$$</p>
+<p style="text-align: center;">$$d_x\ =\ \frac{a(d_0^2\ -\ d_f^2)}{u^2}$$</p>
 
-<p>$$L\ =\ \frac{L\ T^{-2}(L^2\ +\ L^2)}{(L\ T^{-1})^2}$$</p>
+<p style="text-align: center;">$$L\ =\ \frac{L\ T^{-2}(L^2\ +\ L^2)}{(L\ T^{-1})^2}$$</p>
 
-<p>$$L\ =\ \frac{L^3\ T^{-2}}{L^2\ T^{-2}}$$</p>
+<p style="text-align: center;">$$L\ =\ \frac{L^3\ T^{-2}}{L^2\ T^{-2}}$$</p>
 
-<p>$$L\ =\ L$$</p>
+<p style="text-align: center;">$$L\ =\ L$$</p>
 
 <p>Dimensional analysis for our equation for <em>n:</em></p>
 
