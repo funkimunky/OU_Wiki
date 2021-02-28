@@ -1,0 +1,455 @@
+<p style="text-align: center;"><img
+        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25180488/M45-exit-speed-markings.jpg"
+        alt="Yellow line markings on a motorway" width="650" height="312"
+        class="img-responsive atto_image_button_text-bottom"></p>
+
+<h1 id="ouw_s47_0">Specify the purpose</h1>
+
+<p>To determine the number and spacing of yellow painted lines that provides adequate warning to drivers approaching a
+    junction to slow down safely.</p>
+
+<p>The safety lines prior to the junction are to ensure drivers are warned; visually, audially and physically. The lines
+    should be spaced appropriately to give the driver the impression the vehicle is moving faster than it is, thus
+    encouraging the driver
+    to decelerate.</p>
+
+<h1 id="ouw_s47_1">Create the model</h1>
+
+<p>We will first try to determine how far away from the junction the lines should start, in order to encourage the
+    driver to decelerate at a safe constant rate and come to a stop at the junction.&nbsp; We use one of the equations
+    for constant acceleration
+    to relate initial and final velocity of the vehicle to the acceleration and the distance travelled. This will then
+    be used to determine how many lines are needed and how they should be spaced out.&nbsp; For this we will use an
+    arithmetic sequence
+    to determine how the spacing between the lines will change as the lines get closer to the junction.</p>
+
+<h2 id="ouw_s47_2">assumptions</h2>
+
+<ol type="1">
+    <li>The section of the road approaching the junction is straight.</li>
+
+    <li>The road has dry conditions with good visibility.</li>
+
+    <li>The road is flat and level.</li>
+
+    <li>A driver will drive at a speed limit of the road.</li>
+
+    <li>Air resistance to be ignored.</li>
+
+    <li>Drivers will be driving the speed limit upon approaching the lines.</li>
+
+    <li>The lines will be the width of the road so all vehicles hit the line with both front wheels.</li>
+
+    <li>The driver will commence breaking when going over the first line.</li>
+
+    <li>All vehicles are able to decelerate at the same rate regardless of mass.</li>
+
+    <li>All Vehicles will decelerate at a constant rate.</li>
+
+</ol>
+<h2 id="ouw_s47_3">Variables and parameters</h2>
+
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td width="651" valign="top" colspan="2" style="text-align: center;">&nbsp;</td>
+        <td width="129" style="text-align: center;">Units</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Distance from first yellow line to junction</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$S$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Final velocity </p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$v$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m\ s^{-1}$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Initial velocity </p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$u$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m\ s^{-1}$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Acceleration</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$a$$</td>
+        <td width="129" style="text-align: center;">$$m\ s^{-2}$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Distance between first pair of yellow lines (furthest from junction)</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$d_0$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Distance between final pair of yellow lines (closest to junction)</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$d_f$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Number of gaps between pairs of yellow lines</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$n$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$integer\ number$$</td>
+    </tr>
+    <tr>
+        <td width="472" valign="top">
+            <p>Difference in distances between successive pairs of yellow lines</p>
+
+        </td>
+        <td width="129" valign="top" style="text-align: center;"> $$d_x$$</td>
+        <td width="129" valign="top" style="text-align: center;">$$m$$</td>
+    </tr>
+    </tbody>
+</table>
+
+<p style="text-align: center; padding: 10px 40px;"><img
+        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25257978/image%20%281%29.png"
+        alt="Image showing parameters for line spacing model" width="376" height="712"
+        class="img-responsive atto_image_button_text-bottom"><br>
+</p>
+
+<p>If we make an assumption that drivers will 'obey' the lines, then we can take speed as a variable and simply count
+    the first time gap between lines and each line must exist in a pair to form that gap. Lets call it 5 seconds gap in
+    the first set.</p>
+
+<p>Gap = E</p>
+
+<p>Spacing = G</p>
+
+<p>We reduce the E by &lt;arbitrary variable&gt;% in each consecutive pair of lines. We need G to be enough space to
+    allow that % of decelaration so we rearrange our formula to make distance the subject. That lets us measure
+    effectiveness of gaps in each
+    pair and spacing then feeds into a harmonic pattern as David suggested.</p>
+
+<p>N.B. I'm not claiming this is directly realistic. We're isolating a single factor and trying to maximise it. Drivers
+    will not directly measure their speed against the lines and there's a bunch of evidence that rumble strips don't
+    actually do much but
+    fortunately the question is specific enough we can ignore all that.</p>
+
+<h3 id="ouw_s47_4">Formulating mathematical relationships</h3>
+
+<p>First, we consider how far from the junction the yellow lines should start.&nbsp; So, we need to determine what
+    distance is needed to allow vehicles to slow down at an appropriate rate and come to a stop at the junction.&nbsp;
+    In order to do this, we
+    will use the formula for constant acceleration, which relates distance to acceleration, initial velocity and final
+    velocity.</p>
+
+<p>This formula applies to motion in one dimension so we assume that the road is straight (assumption 1) so the distance
+    <em>S</em>&nbsp;is a straight line.&nbsp; Also, in order for this equation to be applicable we assume that vehicles
+    will slow down at
+    a constant rate and that drivers will start to slow down at the start of the yellow lines.&nbsp; We assume that
+    there is no traffic queueing at the junction and that the yellow lines go right up to the junction, so driver has
+    the full distance <em>S</em>&nbsp;to
+    slow down and stop.</p>
+
+<p>$$v^2\ =\ u^2\ +\ 2aS$$</p>
+
+<p>and have S as the distance the lines begin from the junction,</p>
+
+<p>We assume that vehicles come to a stop at the junction so the final speed is zero</p>
+
+<p>assume final speed is zero</p>
+
+<p>$$0\ =\ u^2\ +\ 2aS$$</p>
+
+<p>or</p>
+
+<p>$$-2aS\ =\ u^2$$</p>
+
+<p>If we take the slowest value of deceleration (according to the paper I attached above) as about -0.9 ms<sup>-2</sup>,
+    it means we get a different value of when the lines begin that depends on the speed limit of the road (assuming
+    drivers are doing the
+    speed limit).</p>
+
+<p>If it was a 60 mph limit dual carriageway (27 ms<sup>-1</sup>), it means the lines would begin about:</p>
+
+<p>$$S\ =\ -\ (27)2\ /\ 2\ \times\ 0.9$$</p>
+
+<p>$$S\ =\ 405\ metres\ from\ the\ junction.$$</p>
+
+<p>The next part of the model aims to determine how much the gaps between the yellow lines should reduce by as they get
+    nearer to the junction.&nbsp; For this we use an arithmetic sequence.&nbsp; We assume that the gaps between
+    successive pairs of lines
+    are reducing at a constant rate i.e. that there is a common difference in the distances between each successive pair
+    of lines.&nbsp; So each gap will be shorter than the one before it.&nbsp; </p>
+
+<p>$$d_0$$ be the initial distance between the first two lines and $$d_f$$ (i.e. d - final) be the distance between the
+    final two lines right at the junction, then we can write:</p>
+
+<p>$$d_0\ -\ n\ dx\ =\ d_f$$ (where 'n' is the number of lines after the initial line, so n=1 for the first spacing).
+    So:</p>
+
+<p>$$n\ dx\ =\ d_0\ -\ d_f$$</p>
+
+<p>If we wanted to have 10 metres (just guessing) between the first two lines and 1 metre between the final two lines,
+    this gives:</p>
+
+<p>$$n\ dx\ =\ 10\ -\ 1$$</p>
+
+<p>$$n\ dx\ =\ 9$$</p>
+
+<p>We can then define how much we want to reduce the spacing by, which will progressively increase as n increases, and
+    this tells us how many lines we'd need. So if we wanted to progressively reduce the distance by 0.25 metres, we'd
+    need n = 9/0.25 = 36
+    lines. </p>
+
+<p>So by setting $$dx$$ as the amount each gap gets reduced by, we gradually decrease the line spacing.</p>
+
+<p style="text-align: center;"><img
+        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25190296/Diagram%20of%20reducing%20line%20spacing_2.jpg"
+        alt="illustration showing line spaces for formula above" width="300" height="386"
+        class="img-responsive atto_image_button_text-bottom"></p>
+
+<p>So the sequence is essentially: $$d_n\ =\ d_0\ -\ ndx$$. This gives us each successive line spacing.</p>
+
+<p>Now, linking where the lines begin with the number and spacing...</p>
+
+<p>The average spacing between lines $$\frac{d_0\ +\ d_f}{2}\ \times\ number\ of\ lines\ (n)\ =\ S\ (distance\ lines\
+    begin\ from\ junction).$$</p>
+
+<h2 id="ouw_s0_2">Do the mathematics</h2>
+
+<h3 id="ouw_s63_0">Derive the first model:</h3>
+
+<p>Given the above relationship, we can determine the number of lines.</p>
+
+<p>$$\frac{d_0+d_f}{2}\ \times\ n\ =\ -\frac{u^2}{2a}$$</p>
+
+<p>Therefore, number of lines:</p>
+
+<p>$$n\ =\ -\frac{u^2}{a(d_0\ +\ d_f)}$$</p>
+
+<p>Where $$u\ =\ speed\ of\ vehicle\ when\ it\ reaches\ the\ lines$$</p>
+
+<p>$$a\ =\ acceleration\ (deceleration)$$</p>
+
+<p>$$d_0\ =\ initial\ line\ spacing,\ and$$</p>
+
+<p>$$d_f\ =\ final\ line\ spacing,\ as\ above.$$</p>
+
+<p>We can then substitute n into the equation linking the line spacings $$d_f = d_0 - ndx $$</p>
+
+<p>This gives us:</p>
+
+<p>$$d_f = d_0 + \frac{u^2 dx}{a(d_0+d_f)} $$</p>
+
+<p>$$d_f = \frac{d_0\ a\ (d_0\ +\ d_f)\ +\ u^2\ dx}{a(d_0\ +\ d_f)}$$</p>
+
+<p>Expanding:</p>
+
+<p>$$a\ d_f(d_0\ +\ d_f)\ =\ a\ d_0(d_0\ +\ d_f)\ +\ u^2\ dx$$</p>
+
+<p>$$a\ d_f\ d_0\ +\ a\ d_f^2\ =\ a\ d_0^2\ +\ a\ d_0\ d_f\ +\ u^2\ dx$$</p>
+
+<p>$$a\ d_0^2\ -\ a\ d_f^2\ =\ -u^2\ dx$$</p>
+
+<p>$$a(d_0^2\ +\ d_f^2)\ =\ -u^2\ dx$$</p>
+
+<p>So, distance between the lines, $$dx$$ is:</p>
+
+<p>$$dx\ =\ -\frac{a(d_0^2\ +\ d_f^2)}{u^2}$$</p>
+
+<p>This relates the distance between the lines to the initial speed of the vehicle and it's rate of deceleration,
+    together with the initial and final line spacings.</p>
+
+<p>And we work out how many lines as above, $$n\ =\ -\frac{u^2}{a(d_0\ +\ d_f)}$$</p>
+
+<h3 id="ouw_s64_0">Draw graphs</h3>
+
+<p>Here's a first attempt at some relationships we might get based on the above equations. Some might not all be
+    relevant. I thought I'd just put them all here and we can decide what ones are relevant and correct, and which to
+    ditch.</p>
+
+<p><img src="https://learn2.open.ac.uk/draftfile.php/488914/user/draft/583997582/Graphs.jpg"
+        alt="Graphs of typical relationships" width="600" height="359"
+        class="img-responsive atto_image_button_text-bottom"></p>
+
+<p>Applying the method of dimensional analysis to the model gives:</p>
+
+<p>$$d_x\ =\ \frac{a(d_0^2\ -\ d_f^2)}{u^2}$$</p>
+
+<p>$$L\ =\ \frac{L\ T^{-2}(L^2\ +\ L^2)}{(L\ T^{-1})^2}$$</p>
+
+<p>$$L\ =\ \frac{L^3\ T^{-2}}{L^2\ T^{-2}}$$</p>
+
+<p>$$L\ =\ L$$</p>
+
+<p>Dimensional analysis for our equation for <em>n:</em></p>
+
+<p><em>$$ n=-\frac{u^{2}}{a(d_0+d_f)} $$<br>
+</em></p>
+
+<p><em>$$ [1]=\frac{{[LT^{-1}}]^2}{[LT^{-2}][L]} $$<br>
+</em></p>
+
+<p><em>$$ [1]=\frac{[L^{2}T^{-2}]}{[L^{2}T^{-2}]} $$<br>
+</em></p>
+
+<h2 id="ouw_s0_3">Interpret the results</h2>
+
+<p></p>
+
+<p>We found data for the spacing used in real-life systems in the Department for Transport Traffic Signs Manual, Chapter
+    5 – Road Markings, Section 6.10 (<a
+            href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/773421/traffic-signs-manual-chapter-05.pdf">Traffic
+        Signs Manual - Chapter 5 - Road Markings (publishing.service.gov.uk)</a> ).&nbsp;&nbsp;</p>
+
+<p>This gave the distance between the first pair of yellow lines (<em>d<sub>0</sub></em>
+    <!--[if !msEquation]-->
+    <!--[if !vml]--><img width="3" height="19"
+                         src="file:///C:/Users/Donna/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"
+                         v:shapes="_x0000_i1025">
+    <!--[endif]-->
+    <!--[endif]-->in our formula) as 7.7m and the distance between the final pair of yellow lines
+    (<em>d<sub>f</sub></em>
+    <!--[if !msEquation]-->
+    <!--[if !vml]--><img width="3" height="19"
+                         src="file:///C:/Users/Donna/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"
+                         v:shapes="_x0000_i1025">
+    <!--[endif]-->
+    <!--[endif]-->in our formula) as 2.7m.</p>
+
+<p>For the initial velocity we will use the speed limit for the road in question.&nbsp; We will start with a speed of
+    60mph as this is a common speed limit.&nbsp; This is equivalent to a speed of 27 metres per second.</p>
+
+<p>Finally, to find a suitable value for acceleration we referred to a study entitled Acceleration-Deceleration
+    behaviour of various vehicle types, Bokare &amp; Maurya, 2016, (<a
+            href="https://www.sciencedirect.com/science/article/pii/S2352146517307937">Acceleration-Deceleration
+        Behaviour of Various Vehicle Types - ScienceDirect</a> ).&nbsp;&nbsp;</p>
+
+<p>This study found that trucks had a deceleration rate of about 0.9ms<sup>-1</sup>and cars had a rate of about 4ms<sup>-1</sup>.&nbsp;
+    As this is a safety feature we will use a fairly low deceleration rate of 0.9ms<sup>-1 </sup>to allow for the fact
+    that
+    there will be many different types and sizes of vehicle on the road.</p>
+
+<p>We can now enter these figures into the equation formulated for <em>d<sub>x</sub></em></p>
+
+We have:<br>
+<br> $$ dx = - \frac{a(d_0^2 - d_f^2)}{u^2} $$<br>
+<br> So, inputting the numbers of $$ a = -0.9 ms^{-1}, u = 27 ms^{-1}, d_0 = 7.7 m, d_f = 2.7 m $$:<br>
+<br> $$ dx =&nbsp;- \frac{-0.9 (7.7^2 - 2.7^2)}{27^2} $$<br>
+<br> This gives,<br>
+<br> $$ dx = 0.064 m $$ or about $$ 0.06 m $$<br>
+<br> And for the number of lines, we have:<br>
+<br> $$ n = \frac{-u^2}{a(d_0 + d_f)} $$<br>
+<br> Inputting the above numbers gives,<br>
+<br> $$ n = \frac{-27^2}{-0.9(7.7 + 2.7)} $$<br>
+<br> $$ n = 77.9 $$<br>
+<br> So we would need $$ 78 $$ lines.<br>
+<br> So, using the above data, we would have 78 lines with a gradual reduction of spacing of 0.06 metres.<br>
+<br> For a speed limit of 50mph (22ms<sup>-1</sup>) we have:<br>
+<br> $$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{22^{2}} $$<br>
+<br> Which gives:<br> $$ d_x=0.097m $$ or about 0.10m<br>
+<br> The the difference in the spacing between successive pairs of lines for a 50mph road would be 0.10m<br>
+<br> The number of gaps between pairs of yellow lines is given by:<br>
+<br> $$ n=\frac{-(22^{2})}{(-0.9)(7.7+2.7)} $$<br>
+<br> Which gives:<br> $$ n=51.71 $$<br>
+<br> So approximately 52 gaps (53 lines) would be needed on a road with speed limit of 50mph<br>
+<br> For a speed limit of 70mph (31ms<sup>-1</sup>) we have:<br>
+<br> $$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{31^{2}} $$<br>
+<br> Which gives:<br> $$ d_x=0.049m $$ or about 0.05m<br>
+<br> The the difference in the spacing between successive pairs of lines for a 70mph road would be 0.05m<br>
+<br> The number of gaps between pairs of yellow lines is given by:<br>
+<br> $$ n=\frac{-(31^{2})}{(-0.9)(7.7+2.7)} $$<br>
+<br> Which gives:<br> $$ n=102.67 $$<br>
+<br> So approximately 103 gaps (104 lines) would be needed on a road with speed limit of 70mph<br>
+<br> For speed limits of 50, 60 and 70mph we have numbers of gaps and spacings as follows:<br>
+<br>
+<h5 id="ouw_s79_0"><br>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Speed limit mph</th>
+            <th scope="col">Number of gaps (<em>n</em>)</th>
+            <th scope="col">Difference in spacing (<em>d<sub>x</sub></em>) m</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>50</td>
+            <td>52</td>
+            <td>0.10</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>78</td>
+            <td>0.06</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td>103</td>
+            <td>0.05</td>
+        </tr>
+        </tbody>
+    </table>
+
+</h5>
+
+<br>
+<p></p>
+
+<h3 id="ouw_s8_0">References</h3>
+
+<p><a href="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/attachment/25167934/data.pdf">mind map</a></p>
+
+<p><a href="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/attachment/25167934/TMA07%20Drawing1.png">quick
+    drawing</a></p>
+
+<p>
+    <a href="https://assets.publishing.service.gov.uk/media/559afb11ed915d1595000017/the-highway-code-typical-stopping-distances.pdf">highway
+        code stopping distances</a></p>
+
+<p>
+    <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/773421/traffic-signs-manual-chapter-05.pdf">traffic
+        signs manual chapter 05</a></p>
+
+<p><a href="https://learn2.open.ac.uk/draftfile.php/488914/user/draft/583997582/14323.pdf">Guidance for the Design and
+    Application of Shoulder and Centerline Rumble Strips</a></p>
+
+<h3 id="ouw_s56_0">Evaluate the model</h3>
+
+<p>(created by <a href="https://learn2.open.ac.uk/user/view.php?id=885280&amp;course=208688">David Hamilton</a> on
+    Wednesday, 24 Feb 2021, 07:58)</p>
+
+<p>As I said, in the forum, I wasn't sure if this 'additional data' goes here or in the previous section, but thought
+    I'd put it here to make a start.</p>
+
+<p>The paper where we got the deceleration data from also has:</p>
+
+<p>Truck: travelling 40-50 kph: max deceleration rate = 0.88 ms^-1</p>
+
+<p>Truck: travelling 50-60 kph: max deceleration rate = 0.88 ms^-1</p>
+
+<p>Petrol car: travelling 83-91 kph: max deceleration rate = 4.33 ms^-1</p>
+
+<p>Petrol car: travelling 72-83 kph: max deceleration rate = 3.97 ms^-1</p>
+
+<p>Petrol car: travelling 61-72 kph: max deceleration rate = 3.36 ms^-1</p>
+
+<p>Motorcycle: travelling 60-65 kph: max deceleration rate = 0.59 ms^-1</p>
+
+<p>There's other data there for slower speeds and also for diesel cars.</p>
+
+<p>---</p>
+
+<p>So I'm wondering if we needed to have made some predictions, then input this data and see how it compares?&nbsp;</p>
