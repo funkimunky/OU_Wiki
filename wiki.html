@@ -1,6 +1,14 @@
+<!--<link rel="stylesheet" href="https://latex.now.sh/style.css">-->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style type="text/css">
+    span.highlight{
+        background-color: lime;
+    }
+</style>
+
 <p style="text-align: center;"><img
-        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25180488/M45-exit-speed-markings.jpg"
-        alt="Yellow line markings on a motorway" width="650" height="312"
+        src="https://objects-us-east-1.dream.io/wikiimages/M45-exit-speed-markings.jpg"
+        alt="Yellow line markings on a motorway" width="1200" height="576"
         class="img-responsive atto_image_button_text-bottom"></p>
 
 <h1 id="ouw_s47_0">Specify the purpose</h1>
@@ -122,29 +130,6 @@
     </tbody>
 </table>
 
-<p style="text-align: center; padding: 10px 40px;"><img
-        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25257978/image%20%281%29.png"
-        alt="Image showing parameters for line spacing model" width="376" height="712"
-        class="img-responsive atto_image_button_text-bottom"><br>
-</p>
-
-<p>If we make an assumption that drivers will 'obey' the lines, then we can take speed as a variable and simply count
-    the first time gap between lines and each line must exist in a pair to form that gap. Lets call it 5 seconds gap in
-    the first set.</p>
-
-<p>Gap = E</p>
-
-<p>Spacing = G</p>
-
-<p>We reduce the E by &lt;arbitrary variable&gt;% in each consecutive pair of lines. We need G to be enough space to
-    allow that % of decelaration so we rearrange our formula to make distance the subject. That lets us measure
-    effectiveness of gaps in each
-    pair and spacing then feeds into a harmonic pattern as David suggested.</p>
-
-<p>N.B. I'm not claiming this is directly realistic. We're isolating a single factor and trying to maximise it. Drivers
-    will not directly measure their speed against the lines and there's a bunch of evidence that rumble strips don't
-    actually do much but
-    fortunately the question is specific enough we can ignore all that.</p>
 
 <h3 id="ouw_s47_4">Formulating mathematical relationships</h3>
 
@@ -176,33 +161,32 @@
 
 <p>$$-2aS\ =\ u^2$$</p>
 
-<p>If we take the slowest value of deceleration (according to the paper I attached above) as about -0.9 ms<sup>-2</sup>,
+<p>If we take the <span class="highlight">slowest value of deceleration as about -0.9 ms<sup>-2</sup></span>,
     it means we get a different value of when the lines begin that depends on the speed limit of the road (assuming
     drivers are doing the
     speed limit).</p>
 
-<p>If it was a 60 mph limit dual carriageway (27 ms<sup>-1</sup>), it means the lines would begin about:</p>
+<p>If it was a 60 mph limit dual carriageway (27 ms<sup>-1</sup>), it means the lines would begin at:</p>
 
 <p>$$S\ =\ -\ (27)2\ /\ 2\ \times\ 0.9$$</p>
 
 <p>$$S\ =\ 405\ metres\ from\ the\ junction.$$</p>
 
 <p>The next part of the model aims to determine how much the gaps between the yellow lines should reduce by as they get
-    nearer to the junction.&nbsp; For this we use an arithmetic sequence.&nbsp; We assume that the gaps between
-    successive pairs of lines
-    are reducing at a constant rate i.e. that there is a common difference in the distances between each successive pair
-    of lines.&nbsp; So each gap will be shorter than the one before it.&nbsp; </p>
+    nearer to the junction. For this we use an arithmetic sequence. We assume that the gaps between
+    successive pairs of lines are reducing at a constant rate i.e. that there is a common difference in the distances
+    between each successive pair of lines. So each gap will be shorter than the one before it. </p>
 
-<p>$$d_0$$ be the initial distance between the first two lines and $$d_f$$ (i.e. d - final) be the distance between the
+<p>Let $$d_0$$ be the initial distance between the first two lines and let $$d_f$$ be the distance between the
     final two lines right at the junction, then we can write:</p>
 
-<p>$$d_0\ -\ n\ dx\ =\ d_f$$ (where 'n' is the number of lines after the initial line, so n=1 for the first spacing).
+<p>$$d_0\ -\ n\ dx\ =\ d_f$$ 'n' is the number of lines after the initial line, n=1 for the first spacing).
     So:</p>
 
 <p>$$n\ dx\ =\ d_0\ -\ d_f$$</p>
 
-<p>If we wanted to have 10 metres (just guessing) between the first two lines and 1 metre between the final two lines,
-    this gives:</p>
+<p>If we want to have 10 metres between the first two lines and 1 metre between the final two lines,
+    this would give:</p>
 
 <p>$$n\ dx\ =\ 10\ -\ 1$$</p>
 
@@ -216,8 +200,8 @@
 <p>So by setting $$dx$$ as the amount each gap gets reduced by, we gradually decrease the line spacing.</p>
 
 <p style="text-align: center;"><img
-        src="https://learn2.open.ac.uk/pluginfile.php/3064757/mod_forumng/message/25190296/Diagram%20of%20reducing%20line%20spacing_2.jpg"
-        alt="illustration showing line spaces for formula above" width="300" height="386"
+        src="https://objects-us-east-1.dream.io/wikiimages/Diagram%20of%20reducing%20line%20spacing_2.jpg"
+        alt="illustration showing line spaces for formula above" width="600" height="772"
         class="img-responsive atto_image_button_text-bottom"></p>
 
 <p>So the sequence is essentially: $$d_n\ =\ d_0\ -\ ndx$$. This gives us each successive line spacing.</p>
@@ -280,8 +264,8 @@
     relevant. I thought I'd just put them all here and we can decide what ones are relevant and correct, and which to
     ditch.</p>
 
-<p><img src="https://learn2.open.ac.uk/draftfile.php/488914/user/draft/583997582/Graphs.jpg"
-        alt="Graphs of typical relationships" width="600" height="359"
+<p><img src="https://objects-us-east-1.dream.io/wikiimages/Graphs.jpg"
+        alt="Graphs of typical relationships" width="1200" height="718"
         class="img-responsive atto_image_button_text-bottom"></p>
 
 <p>Applying the method of dimensional analysis to the model gives:</p>
