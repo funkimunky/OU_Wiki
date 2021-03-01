@@ -11,10 +11,9 @@
     }
 </style>
 
-<p style="text-align: center;"><img
-        src="https://objects-us-east-1.dream.io/wikiimages/M45-exit-speed-markings.jpg"
-        alt="Yellow line markings on a motorway" width="1200" height="576"
-        class="img-responsive atto_image_button_text-bottom"></p>
+<p style="text-align: center;"><img src="https://objects-us-east-1.dream.io/wikiimages/M45-exit-speed-markings.jpg"
+                                    alt="Yellow line markings on a motorway" width="1200" height="576"
+                                    class="img-responsive atto_image_button_text-bottom"></p>
 
 <h1 id="ouw_s47_0">Specify the purpose</h1>
 
@@ -61,7 +60,6 @@
 
 </ol>
 <h2 id="ouw_s47_3">Variables and parameters</h2>
-
 
 <table style="margin-left: auto; margin-right: auto;" border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -136,7 +134,6 @@
     </tbody>
 </table>
 
-
 <h3 id="ouw_s47_4">Formulating mathematical relationships</h3>
 
 <p>First, we consider how far from the junction the yellow lines should start.&nbsp; So, we need to determine what
@@ -167,10 +164,9 @@
 
 <p style="text-align: center;">$$-2aS\ =\ u^2$$</p>
 
-<p>If we take the <span style="background-color: lime;" >slowest value of deceleration as about -0.9 ms<sup>-2</sup> (NEEDS REFERENCE)</span>,
+<p>If we take the <span style="background-color: lime;">slowest value of deceleration as about -0.9 ms<sup>-2</sup> (NEEDS REFERENCE)</span>,
     it means we get a different value of when the lines begin that depends on the speed limit of the road (assuming
-    drivers are doing the
-    speed limit).</p>
+    drivers are doing the speed limit).</p>
 
 <p>If it was a 60 mph limit dual carriageway (27 ms<sup>-1</sup>), it means the lines would begin at:</p>
 
@@ -179,20 +175,21 @@
 <p style="text-align: center;">$$S\ =\ 405\ metres\ from\ the\ junction.$$</p>
 
 <p>The next part of the model aims to determine how much the gaps between the yellow lines should reduce by as they get
-    nearer to the junction. For this we use an arithmetic sequence. We assume that the gaps between
-    successive pairs of lines are reducing at a constant rate i.e. that there is a common difference in the distances
-    between each successive pair of lines. So each gap will be shorter than the one before it. </p>
+    nearer to the junction. For this we use an arithmetic sequence. We assume that the gaps between successive pairs of
+    lines are reducing
+    at a constant rate i.e. that there is a common difference in the distances between each successive pair of lines. So
+    each gap will be shorter than the one before it. </p>
 
-<p>Let $$d_0$$ be the initial distance between the first two lines and let $$d_f$$ be the distance between the
-    final two lines right at the junction, then we can write:</p>
+<p>Let $$d_0$$ be the initial distance between the first two lines and let $$d_f$$ be the distance between the final two
+    lines right at the junction, then we can write:</p>
 
-<p style="text-align: center;">$$d_0\ -\ n\ dx\ =\ d_f$$ 'n' is the number of lines after the initial line, n=1 for the first spacing).
-    So:</p>
+<p style="text-align: center;">$$d_0\ -\ n\ dx\ =\ d_f$$ 'n' is the number of lines after the initial line, n=1 for the
+    first spacing). So:</p>
 
 <p style="text-align: center;">$$n\ dx\ =\ d_0\ -\ d_f$$</p>
 
-<p>If we want to have 10 metres between the first two lines and 1 metre between the final two lines,
-    this would give:</p>
+<p>If we want to have 10 metres between the first two lines and 1 metre between the final two lines, this would
+    give:</p>
 
 <p style="text-align: center;">$$n\ dx\ =\ 10\ -\ 1$$</p>
 
@@ -271,8 +268,8 @@
     ditch.</p>
 
 <p style="text-align: center;"><img src="https://objects-us-east-1.dream.io/wikiimages/Graphs.jpg"
-        alt="Graphs of typical relationships" width="1200" height="718"
-        class="img-responsive atto_image_button_text-bottom"></p>
+                                    alt="Graphs of typical relationships" width="1200" height="718"
+                                    class="img-responsive atto_image_button_text-bottom"></p>
 
 <p>Applying the method of dimensional analysis to the model gives:</p>
 
@@ -332,37 +329,74 @@
 
 <p>We can now enter these figures into the equation formulated for <em>d<sub>x</sub></em></p>
 
-We have:<br>
-<p>$$ dx = - \frac{a(d_0^2 - d_f^2)}{u^2} $$</p>
+<p>We have:</p>
+
+<p style="text-align: center;">$$ dx = - \frac{a(d_0^2 - d_f^2)}{u^2} $$</p>
+
 <p>So, inputting the numbers of $$ a = -0.9 ms^{-1}, u = 27 ms^{-1}, d_0 = 7.7 m, d_f = 2.7 m $$:</p>
-<p>$$ dx =&nbsp;- \frac{-0.9 (7.7^2 - 2.7^2)}{27^2} $$</p>
+
+<p style="text-align: center;">$$ dx =&nbsp;- \frac{-0.9 (7.7^2 - 2.7^2)}{27^2} $$</p>
+
 <p>This gives,</p>
-<p>$$ dx = 0.064 m $$ or about $$ 0.06 m $$</p>
+
+<p style="text-align: center;">$$ dx = 0.064 m $$ or about $$ 0.06 m $$</p>
+
 <p>And for the number of lines, we have:</p>
-<p>$$ n = \frac{-u^2}{a(d_0 + d_f)} $$</p>
+
+<p style="text-align: center;">$$ n = \frac{-u^2}{a(d_0 + d_f)} $$</p>
+
 <p>Inputting the above numbers gives,</p>
-<p>$$ n = \frac{-27^2}{-0.9(7.7 + 2.7)} $$</p>
-<p>$$ n = 77.9 $$</p>
+
+<p style="text-align: center;">$$ n = \frac{-27^2}{-0.9(7.7 + 2.7)} $$</p>
+
+<p style="text-align: center;">$$ n = 77.9 $$</p>
+
 <p>So we would need $$ 78 $$ lines.</p>
+
 <p>So, using the above data, we would have 78 lines with a gradual reduction of spacing of 0.06 metres.</p>
+
 <p>For a speed limit of 50mph (22ms<sup>-1</sup>) we have:</p>
-<p>$$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{22^{2}} $$</p>
-<p>Which gives:<p>$$ d_x=0.097m $$ or about 0.10m</p>
+
+<p style="text-align: center;">$$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{22^{2}} $$</p>
+
+<p>Which gives:</p>
+
+<p style="text-align: center;">$$ d_x=0.097m $$ or about 0.10m</p>
+
 <p>The the difference in the spacing between successive pairs of lines for a 50mph road would be 0.10m</p>
+
 <p>The number of gaps between pairs of yellow lines is given by:</p>
-<p>$$ n=\frac{-(22^{2})}{(-0.9)(7.7+2.7)} $$</p>
-<p>Which gives:<p>$$ n=51.71 $$</p>
+
+<p style="text-align: center;">$$ n=\frac{-(22^{2})}{(-0.9)(7.7+2.7)} $$</p>
+
+<p>Which gives:</p>
+
+<p style="text-align: center;">$$ n=51.71 $$</p>
+
 <p>So approximately 52 gaps (53 lines) would be needed on a road with speed limit of 50mph</p>
+
 <p>For a speed limit of 70mph (31ms<sup>-1</sup>) we have:</p>
-<p>$$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{31^{2}} $$</p>
-<p>Which gives:<p>$$ d_x=0.049m $$ or about 0.05m</p>
+
+<p style="text-align: center;">$$ d_x=-\frac{(-0.9)(7.7^{2}-2.7^{2})}{31^{2}} $$</p>
+
+<p>Which gives:</p>
+
+<p style="text-align: center;">$$ d_x=0.049m $$ or about 0.05m</p>
+
 <p>The the difference in the spacing between successive pairs of lines for a 70mph road would be 0.05m</p>
+
 <p>The number of gaps between pairs of yellow lines is given by:</p>
-<p>$$ n=\frac{-(31^{2})}{(-0.9)(7.7+2.7)} $$</p>
-<p>Which gives:<p>$$ n=102.67 $$</p>
+
+<p style="text-align: center;">$$ n=\frac{-(31^{2})}{(-0.9)(7.7+2.7)} $$</p>
+
+<p>Which gives:</p>
+
+<p style="text-align: center;">$$ n=102.67 $$</p>
+
 <p>So approximately 103 gaps (104 lines) would be needed on a road with speed limit of 70mph</p>
+
 <p>For speed limits of 50, 60 and 70mph we have numbers of gaps and spacings as follows:</p>
-<br>
+
 <h5 id="ouw_s79_0"><br>
     <table>
         <thead>
@@ -417,9 +451,8 @@ We have:<br>
     <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/773421/traffic-signs-manual-chapter-05.pdf">traffic
         signs manual chapter 05</a></p>
 
-<p><a href="https://learn2.open.ac.uk/draftfile.php/488914/user/draft/583997582/14323.pdf">Guidance for the Design and
+<p><a href="https://learn2.open.ac.uk/draftfile.php/488914/user/draft/214074531/14323.pdf">Guidance for the Design and
     Application of Shoulder and Centerline Rumble Strips</a></p>
-
 <h3 id="ouw_s56_0">Evaluate the model</h3>
 
 <p>(created by <a href="https://learn2.open.ac.uk/user/view.php?id=885280&amp;course=208688">David Hamilton</a> on
